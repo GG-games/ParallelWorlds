@@ -50,7 +50,7 @@
     };
 
     this.draw = function(context) {
-      // map.draw(context)
+      this.level.draw(context);
       this.player.draw(context);
     };
 
@@ -65,6 +65,7 @@
       this.canvas = element;
       this.context = this.canvas.getContext('2d');
       this.player = new engine.playermobile();
+      this.level = new engine.map();
 
       this.update();
     };
