@@ -1,0 +1,3 @@
+[submodule "lib/webaudio-mod-player"]
+	path = lib/webaudio-mod-player
+	url = https://github.com/jhalme/webaudio-mod-player
