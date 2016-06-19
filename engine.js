@@ -57,7 +57,7 @@
       this.player.update();
       this.draw(this.context);
 
-      window.requestAnimationFrame(this.update);
+      window.requestAnimationFrame(this.update.bind(this));
     };
 
     /*global engine*/
@@ -69,7 +69,7 @@
       this.update();
     };
 
-    window.onkeydown = this.keydown.bind(this);
+    window.onkeydown = this.keydown;
     window.onkeyup = this.keyup.bind(this);
 
     this.init(element);
