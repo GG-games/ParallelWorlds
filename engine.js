@@ -43,8 +43,8 @@ var engine = function() {
     }
   }
 
-  tsshis.load = function(map) {
-das
+  this.load = function(map) {
+
   }
 
   this.draw = function() {
