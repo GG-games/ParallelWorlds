@@ -2,7 +2,9 @@
 var engine = function() {
   'use strict';
 
-  this.camera = '';
+  this.camera = null;
+  this.canvas = null;
+  this.context = null;
 
   this.key = {
     'up': false,
@@ -12,36 +14,51 @@ var engine = function() {
   }
 
   this.keydown = funciton() {
-    if (e.keyCode == 37) {
+    if (e.keyCode == 37 || e.keyCode == 65) {
       this.key.left = true;
     }
-    else if (e.keyCode == 38) {
+    else if (e.keyCode == 38 || e.keyCode == 87) {
       this.key.up = true;
     }
-    else if (e.keyCode == 39) {
+    else if (e.keyCode == 39 || e.keyCode == 68) {
       this.key.right = true;
     }
-    else if (e.keyCode == 40) {
+    else if (e.keyCode == 40 || e.keyCode == 83) {
       this.key.down = true;
     }
   }
 
   this.keyup = function() {
-    if (e.keyCode == 37) {
+    if (e.keyCode == 37 || e.keyCode == 65) {
       this.key.left = false;
     }
-    else if (e.keyCode == 38) {
+    else if (e.keyCode == 38 || e.keyCode == 87) {
       this.key.up = false;
     }
-    else if (e.keyCode == 39) {
+    else if (e.keyCode == 39 || e.keyCode == 68) {
       this.key.right = false;
     }
-    else if (e.keyCode == 40) {
+    else if (e.keyCode == 40 || e.keyCode == 83) {
       this.key.down = false;
     }
   }
 
-   window.onkeydown = this.keydown.bind(this);
-   window.onkeyup = this.keyup.bind(this);
+  tsshis.load = function(map) {
+das
+  }
+
+  this.draw = function() {
+
+  }
+
+  this.update = function() {
+    this.player.update();
+    this.draw(ctx);
+
+    window.requestAnimFrame(this.update);
+  };
+
+  window.onkeydown = this.keydown.bind(this);
+  window.onkeyup = this.keyup.bind(this);
 
 }
