@@ -2,7 +2,7 @@
   'use strict';
 
   /*global engine*/
-  engine.player = function() {
+  engine.playermobile = function() {
 
     this.canJump = true;
 

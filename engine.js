@@ -60,6 +60,14 @@
       window.requestAnimFrame(this.update);
     };
 
+    this.init = function(element) {
+      this.canvas = element;
+      this.context = this.canvas.getContext('2d');
+      this.player = new this.playermobile();
+
+      this.update();
+    };
+
     window.onkeydown = this.keydown.bind(this);
     window.onkeyup = this.keyup.bind(this);
 
