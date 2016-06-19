@@ -3,7 +3,7 @@
   'use strict';
 
   /*jslint unused: false*/
-  window.engine = function() {
+  window.engine = function(element) {
 
     this.canvas = null;
     this.context = null;
@@ -57,19 +57,22 @@
       this.player.update();
       this.draw(this.context);
 
-      window.requestAnimFrame(this.update);
+      window.requestAnimationFrame(this.update);
     };
 
+    /*global engine*/
     this.init = function(element) {
       this.canvas = element;
       this.context = this.canvas.getContext('2d');
-      this.player = new this.playermobile();
+      this.player = new engine.playermobile();
 
       this.update();
     };
 
     window.onkeydown = this.keydown.bind(this);
     window.onkeyup = this.keyup.bind(this);
+
+    this.init(element);
 
   };
 

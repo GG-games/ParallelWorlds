@@ -6,6 +6,10 @@
 
     this.canJump = true;
 
+    this.update = function() {
+
+    };
+
     this.draw = function() {
 
     };
