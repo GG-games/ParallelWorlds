@@ -17,7 +17,8 @@
         'use strict';
 
         /*global engine*/
-        var game = new engine(document.getElementById('canvas'));
+        window.game = {};
+        window.game.engine = new engine(document.getElementById('canvas'));
 
       })();
     </script>
