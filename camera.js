@@ -1,11 +1,15 @@
 
-var camera = function() {
+(function() {
   'use strict';
 
-  this.x = 0;
-  this.y = 0;
+  /*global engine*/
+  engine.camera = function() {
 
-  this.height = 600;
-  this.width = 600;
+    this.x = 0;
+    this.y = 0;
 
-}
+    this.height = 600;
+    this.width = 600;
+  };
+
+})();

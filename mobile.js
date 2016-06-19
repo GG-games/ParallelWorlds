@@ -1,9 +1,15 @@
 
-var mobile = function() {
-  this.x = 0;
-  this.y = 0;
+(function() {
+  'use strict';
 
-  this.draw = function() {
+  /*global engine*/
+  engine.mobile = function() {
+    this.x = 0;
+    this.y = 0;
 
-  }
-}
+    this.draw = function() {
+
+    };
+  };
+
+})();

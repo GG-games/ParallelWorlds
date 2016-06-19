@@ -1,14 +1,18 @@
+(function() {
+  'use strict';
 
-var player = function() {
+  /*global engine*/
+  engine.player = function() {
 
-  this.canJump = true;
+    this.canJump = true;
 
-  this.draw = function() {
+    this.draw = function() {
 
-  }
+    };
 
-  this.move = function() {
+    this.move = function() {
 
-  }
+    };
+  };
 
-}
+})();

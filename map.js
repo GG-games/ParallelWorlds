@@ -1,13 +1,19 @@
 
-var map = function() {
+(function() {
+  'use strict';
 
-  this.gravity = 1.0;
-  this.tileSize = 32;
+  /*global engine*/
+  engine.map = function() {
 
-  this.height = 50;
-  this.width = 50;
+    this.gravity = 1.0;
+    this.tileSize = 32;
 
-  this.draw = function() {
+    this.height = 50;
+    this.width = 50;
 
-  }
-}
+    this.draw = function() {
+
+    };
+  };
+
+})();
