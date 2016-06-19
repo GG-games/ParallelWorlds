@@ -1,4 +1,4 @@
-# ParallelWorlds
+# Parallel Universe
 
 
 Dev Setup
@@ -14,3 +14,9 @@ Close install menu
 click "Tools" dropdown menu at top of screen > JSHint > Set Plugin Preferences
 change "lint_on_save" to true
 ```
+
+
+Requirements
+------
+
+webaudio-mod-player (included)

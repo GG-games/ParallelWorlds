@@ -2,7 +2,6 @@
 (function() {
   'use strict';
 
-  /*global engine*/
   engine.map = function() {
 
     this.gravity = 1.0;

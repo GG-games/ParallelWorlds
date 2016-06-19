@@ -1,7 +1,6 @@
 (function() {
   'use strict';
 
-  /*global engine*/
   engine.playermobile = function() {
 
     engine.mobile.call(this);
@@ -30,7 +29,6 @@
     this.draw = function(context) {
 
     };
-
   };
 
 })();

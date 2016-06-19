@@ -2,7 +2,6 @@
 (function() {
   'use strict';
 
-  /*global engine*/
   engine.mobile = function() {
 
     this.canJump = true;

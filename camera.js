@@ -2,7 +2,6 @@
 (function() {
   'use strict';
 
-  /*global engine*/
   engine.camera = function() {
 
     this.x = 0;

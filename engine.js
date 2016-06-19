@@ -61,7 +61,6 @@
       window.requestAnimationFrame(this.update.bind(this));
     };
 
-    /*global engine*/
     this.init = function(element) {
       this.canvas = element;
       this.context = this.canvas.getContext('2d');
