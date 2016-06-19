@@ -49,12 +49,13 @@
 
     };
 
-    this.draw = function() {
-
+    this.draw = function(context) {
+      // map.draw(context)
+      this.player.draw(context);
     };
 
     this.update = function() {
-      this.player.update();
+      this.player.update(this.key);
       this.draw(this.context);
 
       window.requestAnimationFrame(this.update.bind(this));

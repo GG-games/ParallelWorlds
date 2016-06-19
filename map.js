@@ -11,7 +11,7 @@
     this.height = 50;
     this.width = 50;
 
-    this.draw = function() {
+    this.draw = function(context) {
 
     };
   };
