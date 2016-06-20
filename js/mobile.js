@@ -4,7 +4,10 @@
 
   engine.mobile = function() {
 
-    this.canJump = true;
+    this.level = null;
+
+    this.jumping = false;
+    this.walking = false;
     this.speed = 5;
 
     this.x = 0;
@@ -21,9 +24,23 @@
     };
 
     this.move = function(x, y) {
+      var targetX = this.x + x;
+      var targetY = this.y + y;
+      console.log(targetY);
+
+      // var currentTile = this.level.getTileData(x, y);
+      // console.log(Math.floor(targetX/32), Math.floor(targetY/32));
+
+      var below = this.level.getTileData(Math.floor(x/32), Math.floor(y/32));
+      // console.log(below.passable);
+      if (below.passable === false) {
+        targetY = 0;
+        return;
+      }
+
       // TODO: Fire move event
-      this.x += x;
-      this.y += y;
+      this.x = targetX;
+      this.y = targetY;
     };
 
     this.jump = function() {

@@ -53,6 +53,10 @@
     };
 
     this.getTileData = function(x, y) {
+      if (!this.tiles[y]) {
+        return null;
+      }
+
       return this.tileData[this.tiles[y][x]];
     };
 

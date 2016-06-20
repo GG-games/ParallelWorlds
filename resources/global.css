@@ -3,6 +3,9 @@ html, body {
   padding: 0;
   -webkit-font-smoothing: antialiased;
   text-shadow: rgba(0,0,0,.01) 0 0 1px;
+  /*font-family: helvetica;*/
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-weight: 700;
 }
 
 canvas {

@@ -90,6 +90,11 @@
 
     };
 
+    this.changeLevel = function(newLevel) {
+      newLevel.player = this.player;
+      this.player.level = newLevel;
+    };
+
     this.showFPS = function() {
       var delta;
 
@@ -136,6 +141,7 @@
 
       this.player = new engine.playermobile();
       this.level = new engine.map(tileData);
+      this.changeLevel(this.level);
 
       if (window.devicePixelRatio > 1) {
         var canvasWidth = this.canvas.width;
@@ -153,7 +159,7 @@
       this.update();
     };
 
-    window.onkeydown = this.keydown;
+    window.onkeydown = this.keydown.bind(this);
     window.onkeyup = this.keyup.bind(this);
 
     this.init(element, tileData);
