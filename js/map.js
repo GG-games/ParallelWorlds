@@ -2,13 +2,15 @@
 (function() {
   'use strict';
 
-  engine.map = function() {
+  engine.map = function(tileData, tiles) {
 
     this.gravity = 1.0;
     this.tileSize = 32;
 
     this.height = 50;
     this.width = 50;
+
+    this.tileData = {};
 
     this.tiles = []; // Ground, spikes, victory point, etc.
     this.tiles = [ // debug map
@@ -17,12 +19,14 @@
       [1, 1, 2, 1, 0, 0, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
       [0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-      [0, 0, 0, 0, 0, 0, 2, 2, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1],
+      [0, 0, 0, 0, 0, 0, 2, 2, 1, 1, 1, 1, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 1, 1, 1],
       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
       [0, 0, 1, 2, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
     ];
     this.mobiles = []; // Enemies, etc/
+
+    this.playerStart = {x: 0, y: 0};
 
     // TODO: These may all need to be moved to a new background.js entity
     this.background = {
@@ -44,6 +48,14 @@
       5: {speed: 3, pattern: 5}
     };
 
+    this.getTile = function(x, y) {
+      return this.tiles[y][x];
+    };
+
+    this.getTileData = function(x, y) {
+      return this.tileData[this.tiles[y][x]];
+    };
+
     this.drawBackground = function(context) {
       // TODO: Move background code here
       // Maybe backgrounds should even become their own entity..?
@@ -53,7 +65,7 @@
       for (var y = 0; y<this.tiles.length; y += 1) {
         for (var x = 0; x < this.tiles[y].length; x += 1) {
           if (this.tiles[y][x] !== 0) {
-            context.fillStyle = 'pink';
+            context.fillStyle = this.getTileData(x, y).color;
             context.fillRect(x * this.tileSize, y * this.tileSize, this.tileSize, this.tileSize);
           }
         }
@@ -183,6 +195,12 @@
       this.drawTiles(context);
 
     };
+
+    this.init = function(tileData, tiles) {
+      this.tileData = tileData;
+    };
+
+    this.init(tileData);
   };
 
 })();

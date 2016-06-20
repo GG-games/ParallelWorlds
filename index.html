@@ -22,16 +22,14 @@
       (function() {
         'use strict';
 
-        window.game = {};
-        window.game.engine = new engine(document.getElementById('canvas'));
-
         var tileData = {
           0: {"id": 0, "name": "air", "color": "none", "passable": true, "event": "none"},
           1: {"id": 1, "name": "black", "color": "black", "passable": false, "event": "none"},
           2: {"id": 2, "name": "white", "color": "white", "passable": false, "event": "none"},
         };
 
-        window.game.engine.loadTiles(tileData);
+        window.game = {};
+        window.game.engine = new engine(document.getElementById('canvas'), tileData);
 
       })();
     </script>

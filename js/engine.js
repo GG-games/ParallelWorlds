@@ -3,7 +3,7 @@
   'use strict';
 
   /*jslint unused: false*/
-  window.engine = function(element) {
+  window.engine = function(element, tileData) {
 
     this.canvas = null;
     this.context = null;
@@ -128,11 +128,14 @@
       window.requestAnimationFrame(this.update.bind(this));
     };
 
-    this.init = function(element) {
+    this.init = function(element, tileData) {
       this.canvas = element;
       this.context = this.canvas.getContext('2d');
+
+      this.loadTiles(tileData);
+
       this.player = new engine.playermobile();
-      this.level = new engine.map();
+      this.level = new engine.map(tileData);
 
       if (window.devicePixelRatio > 1) {
         var canvasWidth = this.canvas.width;
@@ -153,7 +156,7 @@
     window.onkeydown = this.keydown;
     window.onkeyup = this.keyup.bind(this);
 
-    this.init(element);
+    this.init(element, tileData);
   };
 
 })();
