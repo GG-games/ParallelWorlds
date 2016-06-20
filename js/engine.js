@@ -64,9 +64,29 @@
      * @param  {object} map Loads a map JSON file
      * @return {object} Returns the map object
      */
-    this.load = function(map) {
+    this.loadMap = function(map) {
       var data = JSON.parse(map);
 
+      // TODO: load map data
+    };
+
+    this.loadTiles = function(tileData) {
+        // tileData = JSON.parse(tileData);
+
+        this.tiles = tileData;
+
+
+        // TODO: rethink this
+
+        // this.tiles = [];
+        // for (var i=0; i<tileData.tiles; i += 1) {
+        //   var tile = tileData.tiles[i];
+
+        //   tile = new engine.tile(tile.id, tile.color, tile.passable, tile.event);
+
+        //   this.tiles.push(tile);
+        // }
+        // TODO: Fire tiles_loaded event
 
     };
 

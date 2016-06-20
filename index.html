@@ -13,6 +13,7 @@
 
     <script type="text/javascript" src="js/polyfills.js"></script>
     <script type="text/javascript" src="js/engine.js"></script>
+    <script type="text/javascript" src="js/tile.js"></script>
     <script type="text/javascript" src="js/map.js"></script>
     <script type="text/javascript" src="js/camera.js"></script>
     <script type="text/javascript" src="js/mobile.js"></script>
@@ -23,6 +24,14 @@
 
         window.game = {};
         window.game.engine = new engine(document.getElementById('canvas'));
+
+        var tileData = {
+          0: {"id": 0, "name": "air", "color": "none", "passable": true, "event": "none"},
+          1: {"id": 1, "name": "black", "color": "black", "passable": false, "event": "none"},
+          2: {"id": 2, "name": "white", "color": "white", "passable": false, "event": "none"},
+        };
+
+        window.game.engine.loadTiles(tileData);
 
       })();
     </script>

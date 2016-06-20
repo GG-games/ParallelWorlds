@@ -1,0 +1,7 @@
+{
+  "tiles": [
+    {"id": 0, "name": "air", "color": "none", "passable": true, "event": "none"},
+    {"id": 1, "name": "black", "color": "black", "passable": false, "event": "none"},
+    {"id": 2, "name": "white", "color": "white", "passable": false, "event": "none"},
+  ]
+}
