@@ -31,11 +31,10 @@
       // var currentTile = this.level.getTileData(x, y);
       // console.log(Math.floor(targetX/32), Math.floor(targetY/32));
 
-      var below = this.level.getTileData(Math.floor(x/32), Math.floor(y/32));
+      var below = this.level.getTileData(Math.ceil(targetX/32), Math.ceil(targetY/32));
       // console.log(below.passable);
       if (below.passable === false) {
-        targetY = 0;
-        return;
+        targetY = this.y;
       }
 
       // TODO: Fire move event

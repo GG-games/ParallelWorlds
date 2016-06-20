@@ -8,7 +8,7 @@
     this.speed = 5;
 
     this.update = function(key) {
-      var move = {x:0, y: 0};
+      var move = {x:0, y: 6};
 
       if (key.left) {
         move.x -= this.speed;
@@ -17,7 +17,7 @@
         move.x += this.speed;
       }
       if (key.up) {
-        move.y -= this.speed;
+        // move.y -= this.speed;
       }
       if (key.down) {
         move.y += this.speed;
