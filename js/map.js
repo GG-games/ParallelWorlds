@@ -17,7 +17,8 @@
       1: {speed: 5, pattern: 1}
     };
 
-    this.test = 600;
+    this.bgPosition = 0;
+    this.reverse = false;
 
     this.draw = function(context) {
       var speed = this.backgrounds[this.current].speed;
@@ -29,11 +30,23 @@
       if (this.current > 0) {
 
         context.fillStyle = 'white';
-        this.test += speed;
-        if (this.test > 1200) {
-          this.test = 0;
+
+        if (this.bgPosition > height) {
+          this.reverse = true;
         }
-        context.fillRect(0, this.test - 600, width, height);
+        if (this.test <= 0) {
+          this.reverse = false;
+        }
+
+        if (this.reverse) {
+          this.bgPosition -= speed;
+          context.fillRect(0, 0, width, this.bgPosition);
+        }
+        else {
+          this.bgPosition += speed;
+          context.fillRect(0, height - this.bgPosition, width, height);
+        }
+
       }
 
     };
