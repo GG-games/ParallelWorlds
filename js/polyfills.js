@@ -1,4 +1,12 @@
 
+(function() {
+  'use strict';
+
+  window.devicePixelRatio = window.devicePixelRatio || 1;
+
+})();
+
+
 // requestAnimationFrame polyfill
 /*jslint plusplus: true*/
 (function() {
