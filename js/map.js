@@ -34,7 +34,7 @@
         if (this.bgPosition > height) {
           this.reverse = true;
         }
-        if (this.test <= 0) {
+        if (this.bgPosition <= 0) {
           this.reverse = false;
         }
 
