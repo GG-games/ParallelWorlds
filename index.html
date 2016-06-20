@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8"/>
+
     <title>Parallel Universe</title>
     <link href="resources/global.css" rel="stylesheet" type="text/css" />
   </head>
@@ -33,5 +35,29 @@
 
       })();
     </script>
+
+    <script type="text/javascript" src="lib/chiptune2.js/js/libopenmpt.js"></script>
+    <script type="text/javascript" src="lib/chiptune2.js/js/chiptune2.js"></script>
+
+    <script type="text/javascript">
+      var player = new ChiptuneJsPlayer(new ChiptuneJsConfig(-1));
+      player.load('http://zodiackingdom.com/music/Arcadia.s3m', function(buffer) {
+        player.play(buffer);
+      });
+    </script>
+
+
+  <!--   <script type="text/javascript" src="lib/webaudio-mod-player/js/utils.js"></script>
+    <script type="text/javascript" src="lib/webaudio-mod-player/js/player.js"></script>
+    <script type="text/javascript" src="lib/webaudio-mod-player/js/pt.js"></script>
+    <script type="text/javascript" src="lib/webaudio-mod-player/js/st3.js"></script>
+    <script type="text/javascript" src="lib/webaudio-mod-player/js/ft2.js"></script>
+    <script type="text/javascript">
+      var module = new Modplayer();
+      module.load('resources/music/ingame.it');
+      module.onReady = function() {
+        module.play();
+      }
+    </script> -->
   </body>
 </html>
