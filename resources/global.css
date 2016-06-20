@@ -21,26 +21,27 @@ canvas {
 }
 
 h1 {
-  position:relative;
+  position: relative;
   background: #fff;
+  display: inline-block;
+  text-shadow: 3px 3px rgba(0,0,0,0.6);
 }
 h1::before,
 h1::after {
+  content: '';
+  color: #fff;
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
+  mix-blend-mode: screen;
   pointer-events: none;
 }
 h1::before {
-  background: linear-gradient( to left top, #000, #fff);
-  content: '';
-  display: block;
-  mix-blend-mode: screen;
+  background: linear-gradient(to left top, #000, #fff);
 }
 h1::after {
   content: "Parallel Universe";
-  color: white;
   mix-blend-mode: multiply;
 }

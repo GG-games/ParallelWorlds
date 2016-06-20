@@ -88,9 +88,9 @@
       }
 
       this.context.fillStyle = 'red';
-      this.context.font = 'normal 16pt Helvetica';
-      this.context.fillText('FPS: ' + Math.round(this.performance.average), 10, 30);
-      this.context.fillText('FPS lowest: ' + Math.round(this.performance.low), 10, 60);
+      this.context.font = 'normal 12pt Helvetica';
+      this.context.fillText('FPS: ' + Math.round(this.performance.average), 10, 20);
+      // this.context.fillText('FPS lowest: ' + Math.round(this.performance.low), 10, 4 0);
     };
 
     this.draw = function(context) {
