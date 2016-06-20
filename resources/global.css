@@ -1,0 +1,46 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: rgba(0,0,0,.01) 0 0 1px;
+}
+
+canvas {
+  width: 900px;
+  margin: auto;
+  background: black;
+  border: 1px solid #ccc;
+  image-rendering: crisp-edges;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+  -ms-interpolation-mode: nearest-neighbor;
+}
+.canvasHolder {
+  width: 900px;
+  margin: auto;
+}
+
+h1 {
+  position:relative;
+  background: #fff;
+}
+h1::before,
+h1::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+}
+h1::before {
+  background: linear-gradient( to left top, #000, #fff);
+  content: '';
+  display: block;
+  mix-blend-mode: screen;
+}
+h1::after {
+  content: "Parallel Universe";
+  color: white;
+  mix-blend-mode: multiply;
+}
