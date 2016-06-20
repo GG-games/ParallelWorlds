@@ -12,7 +12,8 @@
       lastTime: Date.now(),
       fps: 0,
       low: 0,
-      high: 0
+      high: 0,
+      average: 0
     };
 
     this.colors = {
@@ -78,16 +79,17 @@
         this.performance.fps = 1/delta;
       }
 
-      if (this.performance.low === 0 || (this.performance.low > this.performance.fps && this.performance.fps > 1)) {
-        this.performance.low = this.performance.fps;
+      this.performance.average = (this.performance.fps + this.performance.average) >>> 1;
+      if (this.performance.low === 0 || (this.performance.low > this.performance.average && this.performance.average > 1)) {
+        this.performance.low = this.performance.average;
       }
-      else if (this.performance.fps > this.performance.high) {
-        this.performance.high = this.performance.fps;
+      else if (this.performance.average > this.performance.high) {
+        this.performance.high = this.performance.average;
       }
 
       this.context.fillStyle = 'red';
       this.context.font = 'normal 16pt Helvetica';
-      this.context.fillText('FPS: ' + Math.round(this.performance.fps), 10, 30);
+      this.context.fillText('FPS: ' + Math.round(this.performance.average), 10, 30);
       this.context.fillText('FPS lowest: ' + Math.round(this.performance.low), 10, 60);
 
     };
