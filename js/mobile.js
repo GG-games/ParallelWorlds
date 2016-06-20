@@ -33,7 +33,7 @@
 
       var below = this.level.getTileData(Math.ceil(targetX/32), Math.ceil(targetY/32));
       // console.log(below.passable);
-      if (below.passable === false) {
+      if (below && below.passable === false) {
         targetY = this.y;
       }
 
