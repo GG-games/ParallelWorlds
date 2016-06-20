@@ -33,7 +33,7 @@
         if (this.test > 1200) {
           this.test = 0;
         }
-        context.fillRect(0, this.test-600, width, height);
+        context.fillRect(0, this.test - 600, width, height);
       }
 
     };

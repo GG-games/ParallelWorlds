@@ -91,7 +91,6 @@
       this.context.font = 'normal 16pt Helvetica';
       this.context.fillText('FPS: ' + Math.round(this.performance.average), 10, 30);
       this.context.fillText('FPS lowest: ' + Math.round(this.performance.low), 10, 60);
-
     };
 
     this.draw = function(context) {
