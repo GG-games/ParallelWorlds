@@ -22,7 +22,6 @@
       if (key.down) {
         move.y += this.speed;
       }
-      console.log(move);
 
       this.move.apply(this, [move.x, move.y]);
     };

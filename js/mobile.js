@@ -26,7 +26,6 @@
     this.move = function(x, y) {
       var targetX = this.x + x;
       var targetY = this.y + y;
-      console.log(targetY);
 
       // var currentTile = this.level.getTileData(x, y);
       // console.log(Math.floor(targetX/32), Math.floor(targetY/32));
