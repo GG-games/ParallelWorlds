@@ -8,6 +8,12 @@
     this.canvas = null;
     this.context = null;
 
+    this.colors = {
+      'red': '#ff0000',
+      'green': '#00ff00',
+      'blue': '#0000ff',
+    };
+
     this.key = {
       'up': false,
       'down': false,
@@ -45,7 +51,14 @@
       }
     };
 
+    /**
+     *
+     * @param  {object} map Loads a map JSON file
+     * @return {object} Returns the map object
+     */
     this.load = function(map) {
+      var data = JSON.parse(map);
+
 
     };
 
@@ -74,7 +87,6 @@
     window.onkeyup = this.keyup.bind(this);
 
     this.init(element);
-
   };
 
 })();
