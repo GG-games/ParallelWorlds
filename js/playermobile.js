@@ -5,7 +5,7 @@
 
     engine.mobile.call(this);
 
-    this.speed = 5;
+    this.speed = 8;
 
     this.update = function(key) {
       var move = {x:0, y: 6};

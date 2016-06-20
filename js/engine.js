@@ -137,6 +137,9 @@
       this.canvas = element;
       this.context = this.canvas.getContext('2d');
 
+      this.canvas.height = 480;
+      this.canvas.width = 640;
+
       this.loadTiles(tileData);
 
       this.player = new engine.playermobile();
@@ -150,8 +153,8 @@
         this.canvas.width = canvasWidth * window.devicePixelRatio;
         this.canvas.height = canvasHeight * window.devicePixelRatio;
 
-        this.canvas.style.width = canvasWidth;
-        this.canvas.style.height = canvasHeight;
+        this.canvas.style.width = canvasWidth + 'px';
+        this.canvas.style.height = canvasHeight + 'px';
 
         this.context.scale(window.devicePixelRatio, window.devicePixelRatio);
       }
