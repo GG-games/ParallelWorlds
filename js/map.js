@@ -32,13 +32,16 @@
       speed: 0
     };
 
-    this.current = 2;
+    this.current = 5;
     this.bgPosition = 0;
     this.reverse = false;
     this.backgrounds = {
       0: {speed: 0, pattern: 0},
       1: {speed: 5, pattern: 1},
-      2: {speed: 5, pattern: 2}
+      2: {speed: 5, pattern: 2},
+      3: {speed: 5, pattern: 3},
+      4: {speed: 5, pattern: 4},
+      5: {speed: 3, pattern: 5}
     };
 
     this.drawBackground = function(context) {
@@ -107,6 +110,74 @@
           context.fillRect(0, 0, this.bgPosition, height/2);
           context.fillRect(width - this.bgPosition, height/2, width, height/2);
         }
+      }
+      else if (this.current === 3) {
+
+        context.fillStyle = 'white';
+
+        if (this.bgPosition > width) {
+          this.reverse = true;
+        }
+        if (this.bgPosition <= 0) {
+          this.reverse = false;
+        }
+
+        if (this.reverse) {
+          this.bgPosition -= speed;
+          context.fillRect(0, 0, this.bgPosition, height);
+        }
+        else {
+          this.bgPosition += speed;
+          context.fillRect(width - this.bgPosition, 0 , width, height);
+        }
+
+      }
+      else if (this.current === 4) {
+
+        context.fillStyle = 'white';
+
+        if (this.bgPosition > height) {
+          this.reverse = true;
+        }
+        if (this.bgPosition <= 0) {
+          this.reverse = false;
+        }
+
+        if (this.reverse) {
+          this.bgPosition -= speed;
+          context.fillRect(0, height - this.bgPosition, width/2, height);
+          context.fillRect(width/2, 0, width/2, this.bgPosition);
+        }
+        else {
+          this.bgPosition += speed;
+          context.fillRect(0, 0, width/2, this.bgPosition);
+          context.fillRect(width/2, height - this.bgPosition, width/2, height);
+        }
+
+      }
+      else if (this.current === 5) {
+
+        context.fillStyle = 'white';
+
+
+        if (this.bgPosition > width/2) {
+          this.reverse = true;
+        }
+        if (this.bgPosition <= 0) {
+          this.reverse = false;
+        }
+
+        if (this.reverse) {
+          this.bgPosition -= speed;
+          context.fillRect(0 + this.bgPosition, 0, width/2, height/2);
+          context.fillRect(width/2 - this.bgPosition, height/2, width/2, height/2);
+        }
+        else {
+          this.bgPosition += speed;
+          context.fillRect(0 + this.bgPosition, 0, width/2, height/2);
+          context.fillRect(width/2 - this.bgPosition, height/2, width/2, height/2);
+        }
+
       }
 
       this.drawTiles(context);
