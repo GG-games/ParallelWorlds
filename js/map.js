@@ -21,9 +21,10 @@
 
     this.draw = function(context) {
       var speed = this.backgrounds[this.current].speed;
+      var width = 900;
+      var height = 600;
 
-      context.fillStyle = 'black';
-      context.fillRect(0, 0, 900, 600);
+      context.clearRect(0, 0, width, height);
 
       if (this.current > 0) {
 
@@ -32,8 +33,7 @@
         if (this.test > 1200) {
           this.test = 0;
         }
-        context.fillRect(0, this.test-600, 900, 600);
-
+        context.fillRect(0, this.test-600, width, height);
       }
 
     };
